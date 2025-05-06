@@ -18,5 +18,21 @@ class UsersTableSeeder extends Seeder
         //     'password' => bcrypt('password1'),
         //     'active' => true,
         // ]);
+
+        $users = [
+            [
+                'username' => 'user2',
+                'password' => bcrypt('password2'),
+            ],
+            [
+                'username' => 'user3',
+                'password' => bcrypt('password3'),
+            ],
+            [
+                'username' => 'user4',
+                'password' => bcrypt('password4'),
+            ],
+        ];
+        DB::table('users')->insert($users);
     }
 }
