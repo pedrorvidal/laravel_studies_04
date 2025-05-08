@@ -14,6 +14,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
+        // add a single user
         // DB::table('users')->insert([
         //     'username' => 'user1',
         //     'password' => bcrypt('password1'),
