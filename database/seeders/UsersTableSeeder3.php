@@ -7,17 +7,19 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class UsersTableSeeder extends Seeder
+class UsersTableSeeder3 extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $this->call([
-            UsersTableSeeder1::class,
-            UsersTableSeeder2::class,
-            UsersTableSeeder3::class,
-        ]);
+        for ($i = 0; $i < 10; $i++) {
+            $users[] = [
+                'username' => 'user' . Str::random(10),
+                'password' => bcrypt('password'),
+            ];
+        }
+        DB::table('users')->insert($users);
     }
 }
